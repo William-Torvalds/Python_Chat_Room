@@ -2,7 +2,7 @@ import socket
 from threading import Thread
 from time import *
 
-SERVER_IP = input("服务器IP地址>>")
+SERVER_IP = input("服务器IP地址>> ")
 PORT = 6666
 
 
@@ -32,17 +32,17 @@ splash_screen_times = 0
 
 
 while True:
-    msg = input("请输入要发送的内容，发斜杠为指令，目前可使用的指令有/q(退出)>>")
+    msg = input("请输入要发送的内容，发斜杠为指令，目前可使用的指令有/q(退出)>> ")
 
     if msg == "/q":
         break
 
     elif msg == "":
         if splash_screen_times == 3:
-            print("禁止刷屏")
+            print(">> 禁止刷屏")
             sleep(0.5)
             break
-        print("为防止刷屏，禁止输入空格")
+        print(">> 为防止刷屏，禁止输入空格")
         msg = ""
         splash_screen_times += 1
 
