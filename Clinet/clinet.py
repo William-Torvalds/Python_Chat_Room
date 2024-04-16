@@ -2,8 +2,8 @@ import socket
 from threading import Thread
 from time import *
 
-SERVER_IP = "127.0.0.1"
-PORT = 8888
+SERVER_IP = input("服务器IP地址>>")
+PORT = 6666
 
 
 def recv_thread(conn):
@@ -27,22 +27,22 @@ t.start()
 
 
 
-username = input("请输入用户名")
+username = input("请输入用户名>>")
 splash_screen_times = 0
 
 
 while True:
-    msg = input("请输入要发送的内容，发斜杠为指令，目前可使用的指令有/q(退出)>")
+    msg = input("请输入要发送的内容，发斜杠为指令，目前可使用的指令有/q(退出)>>")
 
     if msg == "/q":
         break
 
     elif msg == "":
         if splash_screen_times == 3:
-            print("刷你m刷，不准刷，直接把你客户端停了，jb玩意，滚出我的聊天室!")
+            print("禁止刷屏")
             sleep(0.5)
             break
-        print("为防止刷屏，禁止不输东西")
+        print("为防止刷屏，禁止输入空格")
         msg = ""
         splash_screen_times += 1
 
